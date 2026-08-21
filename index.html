@@ -276,8 +276,9 @@ function renderGroups(groups, gridId, labelFn){
   }).join('');
 }
 renderGroups(rosterGroups, 'gridRoster', n => `${n}조`);
-renderGroups(maleGroups, 'gridMale', n => `숙소 ${n}`);
-renderGroups(femaleGroups, 'gridFemale', n => `숙소 ${n}`);
+const roomNumbers = ["001호","002호","003호","004호","005호","006호","007호","008호","009호","010호","011호","012호","013호","014호","015호","016호","017호"];
+renderGroups(maleGroups, 'gridMale', n => roomNumbers[n - 1]);
+renderGroups(femaleGroups, 'gridFemale', n => roomNumbers[n - 1]);
 
 function setupSearch(inputId, containerIds, metaId){
   const input = document.getElementById(inputId);
